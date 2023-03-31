@@ -1,1 +1,1 @@
-# premier_updator
+# premier_updater
