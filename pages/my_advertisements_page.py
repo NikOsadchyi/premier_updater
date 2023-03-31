@@ -66,4 +66,4 @@ class MyAdvertisementsPage:
         # wait until wait dialog appear and disappear
         WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located(self.wait_dialog_widget))
         WebDriverWait(self.driver, timeout).until(EC.invisibility_of_element_located(self.wait_dialog_widget))
-        print()
+
