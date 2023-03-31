@@ -37,6 +37,7 @@ class MyAdvertisementsPage:
             WebDriverWait(self.driver,
                           timeout,
                           ignored_exceptions=ignored_exceptions).until(EC.element_to_be_clickable(button)).click()
+            self.wait_dialog()
 
     def skip_creative_if_exist(self, timeout: int = 3):
         """
@@ -60,3 +61,9 @@ class MyAdvertisementsPage:
         except (TimeoutException, NoSuchElementException, ElementNotInteractableException):
             pass
         self.driver.switch_to.default_content()
+
+    def wait_dialog(self, timeout: int = 5):
+        # wait until wait dialog appear and disappear
+        WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located(self.wait_dialog_widget))
+        WebDriverWait(self.driver, timeout).until(EC.invisibility_of_element_located(self.wait_dialog_widget))
+        print()
