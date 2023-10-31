@@ -11,6 +11,7 @@ def driver():
     # set up the Chrome options
     options = webdriver.ChromeOptions()
     options.add_argument("--start-maximized")
+    # options.headless = True
 
     driver = webdriver.Chrome(service=service, options=options)
 
